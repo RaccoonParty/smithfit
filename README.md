@@ -1,12 +1,12 @@
 # SmithFit
-Software for fitting network analyzer data
-Usage:
+Software for fitting network analyzer data\
 
+Usage:
 
 smithfit.py fname [-h] [-steps [STEPS]] [-every [N]] [-delimiter DELIMITER] [-comments COMMENTS] [-header HEADER] [-footer FOOTER] [--save-plots] [-ofolder OFOLDER] [-oformat OFORMAT] [--plot-steps]
 
 positional arguments:\
-  fname                 File Name\
+  fname                 File Name
 
 optional arguments:\
   -h, --help            show this help message and exit\
@@ -22,13 +22,13 @@ optional arguments:\
   --plot-steps          Plot every fit iteration\
 \
 For the test data provided, you should run:\
-'''
+```
 python3 smithfit.py data/45d_1.s1p
-'''
+```
 \
 or\
-'''
+```
 python3 smithfit.py data/AutoSave8.csv -delimiter ',' -header 19 -footer 1
-'''
+```
 \
 To save the plots automatically, you need to add the --save-plots flag and optionally, you can specify the folder where you want to output the plot file and the format.
