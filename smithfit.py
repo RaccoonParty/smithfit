@@ -28,11 +28,11 @@ def fit_gamma(ts, gammas, weights):
     e[:,0] = ts
     e[:,1] = np.ones(shape)
     e[:,2] = -ts * gammas
-    P = np.diag(weights)
+    # P = np.diag(weights)
     print(" Calculating the C matrix...", end="\r")
-    C = make_C(e, P)
+    C = make_C(e, weights)
     print(" Calculating the g matrix...", end="\r")
-    g = make_g(gammas, e, P)
+    g = make_g(gammas, e, weights)
     print("Calculating the inverse of C...", end="\r")
     C_inv = np.linalg.inv(C)
     print(" Calculating the fit parameters...", end="\r")
@@ -52,7 +52,7 @@ def make_C(e, P):
     C = np.empty([shape[1],shape[1]],dtype = 'complex_')
     for i in range(0, shape[1]):
         for j in range(0, shape[1]):
-            projected_e_j = np.matmul(P, e[:,j])
+            projected_e_j = P*e[:,j]
             C[i,j] = np.matmul(np.matrix.conjugate(e[:,i]), projected_e_j)
     return C
 
@@ -60,7 +60,7 @@ def make_g(gammas, e, P):
     shape = np.shape(e)
     g = np.empty([shape[1],1],dtype = 'complex_')
     for i in range(0, shape[1]):
-        projected_gammas = np.matmul(P, gammas)
+        projected_gammas = P*gammas
         g[i,0] = np.matmul(np.matrix.conjugate(e[:,i]), projected_gammas)
     return g
 
