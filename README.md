@@ -21,14 +21,12 @@ optional arguments:\
   -oformat OFORMAT      Output format (.png, .jpg, .svg, .pdf etc.)\
   --plot-steps          Plot every fit iteration\
 \
-For the test data provided, you should run:\
+For the test data provided, you should run:
 ```
 python3 smithfit.py data/45d_1.s1p
 ```
-\
-or\
+or
 ```
 python3 smithfit.py data/AutoSave8.csv -delimiter ',' -header 19 -footer 1
 ```
-\
 To save the plots automatically, you need to add the --save-plots flag and optionally, you can specify the folder where you want to output the plot file and the format.
