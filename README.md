@@ -1,6 +1,6 @@
 # SmithFit
-Software for fitting network analyzer data\
-
+Software for fitting network analyzer data
+![SmithFit Photo](https://www.raccoonparty.net/res/smithfit.svg)
 Usage:
 
 smithfit.py fname [-h] [-steps [STEPS]] [-every [N]] [-delimiter DELIMITER] [-comments COMMENTS] [-header HEADER] [-footer FOOTER] [--save-plots] [-ofolder OFOLDER] [-oformat OFORMAT] [--plot-steps]
