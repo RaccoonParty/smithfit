@@ -1,11 +1,11 @@
 import numpy as np
 
-file = "data/loop_antenna_2.s1p"
-header = 12
-footer = 0
-every = 10
+file = "../../data/copper_cavity_loop_antennas/AutoSave47.s1p"
+header = 1312
+footer = 1300
+every = 40
 comments = '!'
-delimiter = ' '
+delimiter = '\t'
 
 data =  np.loadtxt(open(file,'rt').readlines()[header::every], comments=comments,delimiter=delimiter)
-np.savetxt(f"data/antenna_every10.s1p",data, fmt='%f')
+np.savetxt(f"../../data/copper_cavity_loop_antennas/AutoSave47_every{every}.s1p",data, fmt='%f')
